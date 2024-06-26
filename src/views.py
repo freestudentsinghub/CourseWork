@@ -1,8 +1,10 @@
 from datetime import datetime
 
+import requests
 
-# Функция для определения времени суток
+
 # def get_greeting():
+#     '''Функция для определения времени суток'''
 #     current_time = datetime.now()
 #     current_hour = current_time.hour
 #     if 6 <= current_hour < 12:
@@ -16,3 +18,7 @@ from datetime import datetime
 #
 #
 # print(get_greeting())
+
+
+
+
