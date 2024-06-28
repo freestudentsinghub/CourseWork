@@ -1,12 +1,10 @@
-from typing import Optional
+import datetime
+
+import pandas as pd
+
 from utils import read_excel
-import pandas as pd
 
-import json
-import pandas as pd
-from datetime import datetime, timedelta
-import logging
-
+transactions = read_excel("../data/operations.xls")
 # Декоратор без параметра
 # def report_to_file_default(func):
 #     def wrapper(*args, **kwargs):
@@ -29,32 +27,12 @@ import logging
 #         return wrapper
 #     return decorator
 
+
 # Функция для получения трат по категории за последние три месяца
 # @report_to_file_default
-def spending_by_category(transactions: pd.DataFrame, category: str, date: str = None) -> pd.DataFrame:
-    if date is None:
-        date = datetime.now().strftime("%Y-%m-%d")
-    else:
-        date = datetime.strptime(date, "%Y-%m-%d")
-
-        # Вычисляем начальную дату (три месяца назад от переданной даты или текущей даты)
-    start_date = date - timedelta(days=90)
-
-    # Фильтруем транзакции по категории и диапазону дат
-    filtered_transactions = transactions[(transactions['Категория'] == category) &
-                                         (transactions['Дата операции'] >= start_date) &
-                                         (transactions['Дата операции'] <= date)]
-
-
-    report_dataframe = filtered_transactions.groupby('Дата операции')['Сумма платежа'].sum().reset_index()
-
-    return report_dataframe
-
-# Пример использования
-# Загрузка данных и вызов функции
-
-
-
-data = read_excel("../data/operations.xls")
-result = spending_by_category(data, 'Супермаркеты', '2022-01-01')
-print(result)
+def spending_by_category(
+    transactions: pd.DataFrame, category: str, date: str = None
+) -> pd.DataFrame:
+    """Функция возвращает траты по заданной категории за последние три месяца (от переданной даты)."""
+    if date == None:
+        pass

@@ -2,7 +2,6 @@ from datetime import datetime
 
 import requests
 
-
 # def get_greeting():
 #     '''Функция для определения времени суток'''
 #     current_time = datetime.now()
@@ -18,7 +17,3 @@ import requests
 #
 #
 # print(get_greeting())
-
-
-
-
