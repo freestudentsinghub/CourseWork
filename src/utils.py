@@ -34,4 +34,18 @@ def get_currency_exchange_rate():
     logger.info("end get_currency_exchange_rate")
 
 
-print(get_currency_exchange_rate())
+# print(get_currency_exchange_rate())
+
+
+# def filter_by_state(data: list, state: str) -> list:
+#     """Функция, которая принимает на вход список словарей и значение для ключа state
+#     (опциональный параметр со значением по умолчанию
+#     EXECUTED) и возвращает новый список, содержащий только те словари, у которых ключ"""
+#     function_output = []
+#     for check in data:
+#         if check.get("state") == state:
+#             function_output.append(check)
+#
+#     return function_output
+#
+# state = 'Супермаркеты'

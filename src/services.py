@@ -26,4 +26,4 @@ def simple_search(transactions: List[dict], search_bar: str):
 
 search_bar = "Супермаркеты"
 transactions = read_excel("../data/operations.xls")
-print(simple_search(transactions, search_bar))
+# print(simple_search(transactions, search_bar))
