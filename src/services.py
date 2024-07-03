@@ -8,7 +8,7 @@ from src.utils import read_excel
 logger = setup_logger("simple search", "services.log")
 
 
-def simple_search(transactions: List[dict], search_bar: str):
+def simple_search(transactions: List[dict], search_bar: str) -> str:
     """Пользователь передает строку для поиска,
     возвращается JSON-ответ со всеми транзакциями,
     содержащими запрос в описании или категории."""
